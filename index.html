@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ebenezer Quayson | Petroleum Engineering student</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Ebenezer Quayson</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>Final-Year Petroleum Engineering Student</h1>
+            <p>Aspiring Energy Professional | Reservoir Simulation | Drilling Optimization | Python & ML</p>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I’m Ebenezer Quayson, a final-year petroleum engineering student with a passion for reservoir simulation, drilling optimization, and data-driven solutions in energy. I enjoy applying Python, machine learning, and AI to solve real-world petroleum engineering challenges.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill">Reservoir Simulation</div>
+            <div class="skill">Drilling Optimisation</div>
+            <div class="skill">Python Programming</div>
+            <div class="skill">Machine Learning & AI</div>
+            <div class="skill">Well Logging</div>
+            <div class="skill">Data Analysis</div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="project">
+            <h3>Reservoir Simulation Analysis</h3>
+            <p>Simulated oil reservoir behavior using Eclipse software and Python, analyzing production rates and recovery strategies.</p>
+            <img src="images/reservoir_cutaway.png" alt="Reservoir Simulation" class="project-image">
+        </div>
+
+        <div class="project">
+            <h3>Drilling Optimization Model</h3>
+            <p>Developed a Python-based ROP prediction model using machine learning techniques to optimise drilling efficiency.</p>
+        </div>
+
+        <div class="project">
+            <h3>Interactive Reservoir Simulation</h3>
+            <p>Visualizing pressure vs time for multiple wells in a reservoir simulation.</p>
+            <div id="reservoir-plot" style="width:100%;height:400px;"></div>
+        </div>
+    </section>
+
+    <section id="resume">
+        <h2>Resume</h2>
+        <p>You can download my full CV here:</p>
+        <a href="Ebenezer_Quayson_CV.pdf" class="btn">Download CV</a>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:quaysonebenezer@gmail.com">quaysonebenezer@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/ebenezarquayson131213/" target="_blank">linkedin.com/in/ebenezarquayson131213</a></p>
+        <p>GitHub: <a href="https://github.com/username" target="_blank">github.com/username</a></p>
+    </section>
+
+    <footer>
+        <p>© 2026 Ebenezer Quayson. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script>
+        // Interactive Plotly Graph
+        var trace1 = {
+            x: ['Month 1', 'Month 2', 'Month 3', 'Month 4', 'Month 5'],
+            y: [120, 150, 130, 170, 160],
+            mode: 'lines+markers',
+            name: 'Well A'
+        };
+
+        var trace2 = {
+            x: ['Month 1', 'Month 2', 'Month 3', 'Month 4', 'Month 5'],
+            y: [100, 130, 120, 140, 150],
+            mode: 'lines+markers',
+            name: 'Well B'
+        };
+
+        var data = [trace1, trace2];
+        var layout = {
+            title: 'Reservoir Well Pressure Over Time',
+            xaxis: { title: 'Time' },
+            yaxis: { title: 'Pressure (psi)' }
+        };
+
+        Plotly.newPlot('reservoir-plot', data, layout);
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
