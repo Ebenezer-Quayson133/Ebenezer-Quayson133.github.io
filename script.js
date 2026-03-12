@@ -1,4 +1,4 @@
-/* Scroll progress bar */
+/* Scroll progress */
 
 window.addEventListener("scroll",()=>{
 
@@ -13,7 +13,7 @@ document.querySelector(".scroll-bar").style.width=progress+"%";
 });
 
 
-/* typing effect */
+/* typing animation */
 
 const text="Petroleum Engineering Student";
 
@@ -36,7 +36,7 @@ setTimeout(type,70);
 type();
 
 
-/* skill animation */
+/* skill bars */
 
 const skills=document.querySelectorAll(".skill-fill");
 
@@ -59,11 +59,11 @@ entry.target.style.width=width+"%";
 skills.forEach(skill=>skillObserver.observe(skill));
 
 
-/* timeline animation */
+/* about animation */
 
-const items=document.querySelectorAll(".timeline-item");
+const about=document.querySelectorAll(".about-content p");
 
-const observer=new IntersectionObserver(entries=>{
+const aboutObserver=new IntersectionObserver(entries=>{
 
 entries.forEach(entry=>{
 
@@ -77,4 +77,23 @@ entry.target.classList.add("show");
 
 });
 
-items.forEach(item=>observer.observe(item));
+about.forEach(p=>aboutObserver.observe(p));
+
+
+/* back to top */
+
+const topBtn=document.getElementById("topBtn");
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>400){
+topBtn.style.display="block";
+}else{
+topBtn.style.display="none";
+}
+
+});
+
+topBtn.onclick=()=>{
+window.scrollTo({top:0,behavior:"smooth"});
+};
