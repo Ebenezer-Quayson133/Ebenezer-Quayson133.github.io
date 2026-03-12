@@ -30,8 +30,8 @@ const skillObserver=new IntersectionObserver(entries=>{
 });
 skills.forEach(skill=>skillObserver.observe(skill));
 
-/* About & Timeline Scroll Animations */
-const animateElements=document.querySelectorAll(".about-content p, .timeline-item");
+/* Scroll-triggered animations for About, Timeline, Achievements */
+const animateElements=document.querySelectorAll(".about-content p, .timeline-item, .card");
 const observer=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
