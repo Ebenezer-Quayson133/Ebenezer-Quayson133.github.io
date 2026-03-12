@@ -60,31 +60,19 @@
 <!-- About Section -->
 <section id="about" class="about-section">
   <div class="about-content">
-    <p>
-      I’m an ambitious undergraduate student pursuing a Bachelor’s degree in Petroleum Engineering at the University of Mines and Technology (UMaT), Tarkwa, Ghana.
-    </p>
+    <p> I’m an ambitious undergraduate student pursuing a Bachelor’s degree in Petroleum Engineering at the University of Mines and Technology (UMaT), Tarkwa, Ghana. </p>
 
-    <p>
-      As a petroleum engineering student, I’m developing strong technical skills in drilling engineering, reservoir engineering and modelling, and production systems. I’m especially interested in how these skills can be applied to support cleaner and more efficient oil and gas operations as part of the global energy transition.
-    </p>
+    <p> As a petroleum engineering student, I’m developing strong technical skills in drilling engineering, reservoir engineering and modelling, and production systems. I’m especially interested in how these skills can be applied to support cleaner and more efficient oil and gas operations as part of the global energy transition. </p>
 
-    <p>
-      In addition to my engineering background, I’m also building solid skills in Python programming, which I apply in data analysis, machine learning, and problem solving related to petroleum engineering challenges. I believe combining programming with engineering knowledge is essential for innovation in today’s data driven energy landscape.
-    </p>
+    <p> In addition to my engineering background, I’m also building solid skills in Python programming, which I apply in data analysis, machine learning, and problem solving related to petroleum engineering challenges. I believe combining programming with engineering knowledge is essential for innovation in today’s data driven energy landscape. </p>
 
-    <p>
-      I’m naturally reflective and observant, which helps me stay focused and detail oriented in my work. Though I may come across as quiet or reserved at first, I’m fully engaged and committed behind the scenes. I believe in thinking before speaking and acting with intention, which allows me to contribute meaningfully in team environments.
-    </p>
+    <p> I’m naturally reflective and observant, which helps me stay focused and detail oriented in my work. Though I may come across as quiet or reserved at first, I’m fully engaged and committed behind the scenes. I believe in thinking before speaking and acting with intention, which allows me to contribute meaningfully in team environments. </p>
 
-    <p>
-      I’m eager to apply my knowledge and skills to help meet the world’s energy demands while driving progress and innovation in the oil and gas industry. Through dedication, hard work, and teamwork, I aim to make a meaningful impact in the field and support the sustainable development of energy resources.
-    </p>
+    <p> I’m eager to apply my knowledge and skills to help meet the world’s energy demands while driving progress and innovation in the oil and gas industry. Through dedication, hard work, and teamwork, I aim to make a meaningful impact in the field and support the sustainable development of energy resources. </p>
 
-    <h3 class="connect"><a href="https://www.linkedin.com/in/ebenezerquayson131213" target="_blank">Let's Connect</a></h3>
+    <h3 class="connect"><a href="https://www.linkedin.com/in/your-linkedin" target="_blank">Let's Connect</a></h3>
 
-    <p>
-      Please feel free to reach out if you would like to discuss opportunities, collaborations, or conversations about emerging trends and advancements in petroleum engineering and the evolving energy sector.
-    </p>
+    <p> Please feel free to reach out if you would like to discuss opportunities, collaborations, or conversations about emerging trends and advancements in petroleum engineering and the evolving energy sector. </p>
   </div>
 </section>
 
@@ -97,28 +85,20 @@
     font-family: Arial, sans-serif;
   }
 
-  /* Initially hidden elements */
   .about-content p,
   .about-content h3 {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  }
-
-  /* Active class triggered on scroll */
-  .about-content.animate p,
-  .about-content.animate h3 {
-    opacity: 1;
-    transform: translateY(0);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* longer fade */
   }
 
   /* Hover effect for Let's Connect link */
   .connect a {
     text-decoration: none;
-    color: #0A66C2; /* LinkedIn blue */
+    color: #0A66C2;
     font-weight: bold;
     transition: color 0.3s, transform 0.3s, background-color 0.3s;
-    display: inline-block; 
+    display: inline-block;
     padding: 5px 10px;
     border-radius: 5px;
   }
@@ -128,10 +108,26 @@
     transform: scale(1.1);
     background-color: rgba(10,102,194,0.1);
   }
+
+  /* Animated when in view */
+  .about-content.animate p,
+  .about-content.animate h3 {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Stagger delays using nth-child */
+  .about-content.animate p:nth-of-type(1) { transition-delay: 0.1s; }
+  .about-content.animate p:nth-of-type(2) { transition-delay: 0.4s; }
+  .about-content.animate p:nth-of-type(3) { transition-delay: 0.7s; }
+  .about-content.animate p:nth-of-type(4) { transition-delay: 1s; }
+  .about-content.animate p:nth-of-type(5) { transition-delay: 1.3s; }
+  .about-content.animate h3 { transition-delay: 1.6s; }
+  .about-content.animate p:last-of-type { transition-delay: 1.9s; }
 </style>
 
 <script>
-  // Intersection Observer to animate when in view
+  // Intersection Observer for scroll-triggered animation
   const aboutContent = document.querySelector('.about-content');
 
   const observer = new IntersectionObserver(entries => {
@@ -141,31 +137,10 @@
         observer.unobserve(entry.target); // animate only once
       }
     });
-  }, { threshold: 0.2 }); // trigger when 20% visible
+  }, { threshold: 0.2 });
 
   observer.observe(aboutContent);
 </script>
-</section>
-
-<div class="stats">
-
-<div>
-<h3 class="counter" data-target="87.87">0</h3>
-<p>CWA</p>
-</div>
-
-<div>
-<h3 class="counter" data-target="3">0</h3>
-<p>Projects</p>
-</div>
-
-<div>
-<h3 class="counter" data-target="2">0</h3>
-<p>Internships</p>
-</div>
-
-</div>
-
 </section>
 
 
@@ -309,6 +284,7 @@ LinkedIn
 </body>
 
 </html>
+
 
 
 
