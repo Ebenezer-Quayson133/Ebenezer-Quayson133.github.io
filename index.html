@@ -80,7 +80,7 @@
       I’m eager to apply my knowledge and skills to help meet the world’s energy demands while driving progress and innovation in the oil and gas industry. Through dedication, hard work, and teamwork, I aim to make a meaningful impact in the field and support the sustainable development of energy resources.
     </p>
 
-    <h3>Let's Connect</h3>
+    <h3 class="connect"><a href="https://www.linkedin.com/in/your-linkedin" target="_blank">Let's Connect</a></h3>
 
     <p>
       Please feel free to reach out if you would like to discuss opportunities, collaborations, or conversations about emerging trends and advancements in petroleum engineering and the evolving energy sector.
@@ -88,35 +88,53 @@
   </div>
 </section>
 
-<!-- Add this CSS -->
 <style>
+  /* Centering and basic styling */
   .about-section {
     text-align: center;
     padding: 50px 20px;
     max-width: 900px;
     margin: auto;
+    font-family: Arial, sans-serif;
   }
 
   .about-content p,
   .about-content h3 {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
     animation: fadeInUp 1s forwards;
   }
 
-  .about-content p:nth-child(1) { animation-delay: 0.2s; }
-  .about-content p:nth-child(2) { animation-delay: 0.4s; }
-  .about-content p:nth-child(3) { animation-delay: 0.6s; }
-  .about-content p:nth-child(4) { animation-delay: 0.8s; }
-  .about-content p:nth-child(5) { animation-delay: 1s; }
+  /* Staggered animation delays */
+  .about-content p:nth-of-type(1) { animation-delay: 0.2s; }
+  .about-content p:nth-of-type(2) { animation-delay: 0.4s; }
+  .about-content p:nth-of-type(3) { animation-delay: 0.6s; }
+  .about-content p:nth-of-type(4) { animation-delay: 0.8s; }
+  .about-content p:nth-of-type(5) { animation-delay: 1s; }
   .about-content h3 { animation-delay: 1.2s; }
-  .about-content p:last-child { animation-delay: 1.4s; }
+  .about-content p:last-of-type { animation-delay: 1.4s; }
 
   @keyframes fadeInUp {
-    to {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  /* Hover effect for Let’s Connect */
+  .connect a {
+    text-decoration: none;
+    color: #0A66C2; /* LinkedIn blue */
+    transition: color 0.3s, transform 0.3s;
+  }
+
+  .connect a:hover {
+    color: #004182;
+    transform: scale(1.05);
   }
 </style>
 </section>
@@ -283,6 +301,7 @@ LinkedIn
 </body>
 
 </html>
+
 
 
 
