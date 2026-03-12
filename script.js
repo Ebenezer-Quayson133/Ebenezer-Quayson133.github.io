@@ -1,40 +1,90 @@
-// Lightbox for all cards
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
+const text = "Petroleum Engineer | Machine Learning Enthusiast | Energy Professional"
 
-document.querySelectorAll('.card img').forEach(img => {
-  img.addEventListener('click', () => {
-    lightbox.style.display = 'block';
-    lightboxImg.src = img.src;
-  });
-});
+let i = 0
 
-document.querySelectorAll('.close').forEach(closeBtn => {
-  closeBtn.addEventListener('click', () => lightbox.style.display = 'none');
-});
+function typing(){
 
-lightbox.addEventListener('click', e => {
-  if (e.target === lightbox) lightbox.style.display = 'none';
-});
+document.querySelector(".typing").textContent = text.slice(0,i++)
 
-// Sticky nav highlight
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('header nav a');
+if(i <= text.length){
+setTimeout(typing,60)
+}
 
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 80;
-    if (pageYOffset >= sectionTop) current = section.getAttribute('id');
-  });
-  navLinks.forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href').includes(current)) link.classList.add('active');
-  });
-});
+}
 
-// Animate skill bars
-document.querySelectorAll('.skill-fill').forEach(bar => {
-  const width = bar.style.getPropertyValue('--skill-width');
-  bar.style.width = width;
-});
+typing()
+
+
+
+const skills = document.querySelectorAll(".skill-fill")
+
+function animateSkills(){
+
+skills.forEach(skill=>{
+
+const width = skill.getAttribute("data-width")
+
+skill.style.width = width + "%"
+
+})
+
+}
+
+window.addEventListener("scroll",animateSkills)
+
+
+
+const counters = document.querySelectorAll(".counter")
+
+counters.forEach(counter=>{
+
+const update = () =>{
+
+const target = +counter.getAttribute("data-target")
+
+const count = +counter.innerText
+
+const speed = target / 100
+
+if(count < target){
+
+counter.innerText = Math.ceil(count + speed)
+
+setTimeout(update,20)
+
+}
+
+}
+
+update()
+
+})
+
+
+
+const reveals = document.querySelectorAll(".reveal")
+
+window.addEventListener("scroll",()=>{
+
+reveals.forEach(el=>{
+
+const top = el.getBoundingClientRect().top
+
+if(top < window.innerHeight - 100){
+
+el.style.opacity=1
+el.style.transform="translateY(0)"
+
+}
+
+})
+
+})
+
+
+
+document.getElementById("darkToggle").onclick = ()=>{
+
+document.body.classList.toggle("light")
+
+}
