@@ -1,20 +1,21 @@
-/* Scroll Progress */
+/* Scroll progress bar */
 
 window.addEventListener("scroll",()=>{
 
 let scrollTop=document.documentElement.scrollTop;
-let scrollHeight=document.documentElement.scrollHeight-document.documentElement.clientHeight;
 
-let progress=(scrollTop/scrollHeight)*100;
+let height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
 
-document.querySelector(".scroll-progress").style.width=progress+"%";
+let progress=(scrollTop/height)*100;
+
+document.querySelector(".scroll-bar").style.width=progress+"%";
 
 });
 
 
-/* Typing Animation */
+/* typing effect */
 
-const text="Petroleum Engineering Student | Marchine Learning Enthusiats| Aspiring Energy Professional";
+const text="Petroleum Engineering Student";
 
 let i=0;
 
@@ -23,6 +24,7 @@ function type(){
 if(i<text.length){
 
 document.querySelector(".typing").innerHTML+=text.charAt(i);
+
 i++;
 
 setTimeout(type,70);
@@ -34,7 +36,7 @@ setTimeout(type,70);
 type();
 
 
-/* Skill Bars */
+/* skill animation */
 
 const skills=document.querySelectorAll(".skill-fill");
 
@@ -45,6 +47,7 @@ entries.forEach(entry=>{
 if(entry.isIntersecting){
 
 let width=entry.target.getAttribute("data-width");
+
 entry.target.style.width=width+"%";
 
 }
@@ -56,7 +59,7 @@ entry.target.style.width=width+"%";
 skills.forEach(skill=>skillObserver.observe(skill));
 
 
-/* Timeline Animation */
+/* timeline animation */
 
 const items=document.querySelectorAll(".timeline-item");
 
@@ -75,52 +78,3 @@ entry.target.classList.add("show");
 });
 
 items.forEach(item=>observer.observe(item));
-
-
-/* About paragraph animation */
-
-const aboutText=document.querySelectorAll(".about-content p");
-
-const aboutObserver=new IntersectionObserver(entries=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.classList.add("show");
-
-}
-
-});
-
-});
-
-aboutText.forEach(p=>aboutObserver.observe(p));
-
-
-/* Achievement Counters */
-
-const counters=document.querySelectorAll(".counter");
-
-counters.forEach(counter=>{
-
-const update=()=>{
-
-const target=+counter.getAttribute("data-target");
-const count=+counter.innerText;
-
-const increment=target/100;
-
-if(count<target){
-
-counter.innerText=Math.ceil(count+increment);
-
-setTimeout(update,20);
-
-}
-
-};
-
-update();
-
-});
