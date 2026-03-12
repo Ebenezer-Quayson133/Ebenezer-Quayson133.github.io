@@ -1,106 +1,126 @@
-const text = "Petroleum Engineer | Machine Learning Enthusiast | Energy Professional"
-
-let i = 0
-
-function typing(){
-
-document.querySelector(".typing").textContent = text.slice(0,i++)
-
-if(i <= text.length){
-setTimeout(typing,60)
-}
-
-}
-
-typing()
-
-
-
-const skills = document.querySelectorAll(".skill-fill")
-
-function animateSkills(){
-
-skills.forEach(skill=>{
-
-const width = skill.getAttribute("data-width")
-
-skill.style.width = width + "%"
-
-})
-
-}
-
-window.addEventListener("scroll",animateSkills)
-
-
-
-const counters = document.querySelectorAll(".counter")
-
-counters.forEach(counter=>{
-
-const update = () =>{
-
-const target = +counter.getAttribute("data-target")
-
-const count = +counter.innerText
-
-const speed = target / 100
-
-if(count < target){
-
-counter.innerText = Math.ceil(count + speed)
-
-setTimeout(update,20)
-
-}
-
-}
-
-update()
-
-})
-
-
-
-const reveals = document.querySelectorAll(".reveal")
+/* Scroll Progress */
 
 window.addEventListener("scroll",()=>{
 
-reveals.forEach(el=>{
+let scrollTop=document.documentElement.scrollTop;
+let scrollHeight=document.documentElement.scrollHeight-document.documentElement.clientHeight;
 
-const top = el.getBoundingClientRect().top
+let progress=(scrollTop/scrollHeight)*100;
 
-if(top < window.innerHeight - 100){
+document.querySelector(".scroll-progress").style.width=progress+"%";
 
-el.style.opacity=1
-el.style.transform="translateY(0)"
+});
+
+
+/* Typing Animation */
+
+const text="Petroleum Engineering Student | Marchine Learning Enthusiats| Aspiring Energy Professional";
+
+let i=0;
+
+function type(){
+
+if(i<text.length){
+
+document.querySelector(".typing").innerHTML+=text.charAt(i);
+i++;
+
+setTimeout(type,70);
 
 }
 
-})
-
-})
-
-
-
-document.getElementById("darkToggle").onclick = ()=>{
-
-document.body.classList.toggle("light")
-
 }
-const timelineItems = document.querySelectorAll(".timeline-item");
 
-const timelineObserver = new IntersectionObserver(entries=>{
+type();
+
+
+/* Skill Bars */
+
+const skills=document.querySelectorAll(".skill-fill");
+
+const skillObserver=new IntersectionObserver(entries=>{
+
 entries.forEach(entry=>{
+
 if(entry.isIntersecting){
-entry.target.classList.add("show");
-timelineObserver.unobserve(entry.target);
+
+let width=entry.target.getAttribute("data-width");
+entry.target.style.width=width+"%";
+
 }
-});
-},{
-threshold:0.2
+
 });
 
-timelineItems.forEach(item=>{
-timelineObserver.observe(item);
+});
+
+skills.forEach(skill=>skillObserver.observe(skill));
+
+
+/* Timeline Animation */
+
+const items=document.querySelectorAll(".timeline-item");
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+});
+
+items.forEach(item=>observer.observe(item));
+
+
+/* About paragraph animation */
+
+const aboutText=document.querySelectorAll(".about-content p");
+
+const aboutObserver=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+});
+
+aboutText.forEach(p=>aboutObserver.observe(p));
+
+
+/* Achievement Counters */
+
+const counters=document.querySelectorAll(".counter");
+
+counters.forEach(counter=>{
+
+const update=()=>{
+
+const target=+counter.getAttribute("data-target");
+const count=+counter.innerText;
+
+const increment=target/100;
+
+if(count<target){
+
+counter.innerText=Math.ceil(count+increment);
+
+setTimeout(update,20);
+
+}
+
+};
+
+update();
+
 });
