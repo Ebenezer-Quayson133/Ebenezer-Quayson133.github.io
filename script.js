@@ -88,3 +88,19 @@ document.getElementById("darkToggle").onclick = ()=>{
 document.body.classList.toggle("light")
 
 }
+const timelineItems = document.querySelectorAll(".timeline-item");
+
+const timelineObserver = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+timelineObserver.unobserve(entry.target);
+}
+});
+},{
+threshold:0.2
+});
+
+timelineItems.forEach(item=>{
+timelineObserver.observe(item);
+});
