@@ -7,7 +7,7 @@ window.addEventListener("scroll",()=>{
 });
 
 /* Typing Animation */
-const text="Petroleum Engineering Student";
+const text="Petroleum Engineering Student | Machine Learning Enthusiast | Aspiring Energy Professional";
 let i=0;
 function type(){
   if(i<text.length){
@@ -49,3 +49,4 @@ window.addEventListener("scroll",()=>{
   else topBtn.style.display="none";
 });
 topBtn.onclick=()=>{window.scrollTo({top:0,behavior:"smooth"});}
+
