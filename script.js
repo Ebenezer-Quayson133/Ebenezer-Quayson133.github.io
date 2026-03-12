@@ -1,99 +1,51 @@
-/* Scroll progress */
-
+/* Scroll Progress Bar */
 window.addEventListener("scroll",()=>{
-
-let scrollTop=document.documentElement.scrollTop;
-
-let height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
-
-let progress=(scrollTop/height)*100;
-
-document.querySelector(".scroll-bar").style.width=progress+"%";
-
+  let scrollTop=document.documentElement.scrollTop;
+  let height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+  let progress=(scrollTop/height)*100;
+  document.querySelector(".scroll-bar").style.width=progress+"%";
 });
 
-
-/* typing animation */
-
+/* Typing Animation */
 const text="Petroleum Engineering Student";
-
 let i=0;
-
 function type(){
-
-if(i<text.length){
-
-document.querySelector(".typing").innerHTML+=text.charAt(i);
-
-i++;
-
-setTimeout(type,70);
-
+  if(i<text.length){
+    document.querySelector(".typing").innerHTML+=text.charAt(i);
+    i++;
+    setTimeout(type,70);
+  }
 }
-
-}
-
 type();
 
-
-/* skill bars */
-
+/* Skill Bars Animation */
 const skills=document.querySelectorAll(".skill-fill");
-
 const skillObserver=new IntersectionObserver(entries=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-let width=entry.target.getAttribute("data-width");
-
-entry.target.style.width=width+"%";
-
-}
-
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      let width=entry.target.getAttribute("data-width");
+      entry.target.style.width=width+"%";
+    }
+  });
 });
-
-});
-
 skills.forEach(skill=>skillObserver.observe(skill));
 
+/* About & Timeline Scroll Animations */
+const animateElements=document.querySelectorAll(".about-content p, .timeline-item");
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:0.2});
+animateElements.forEach(el=>observer.observe(el));
 
-/* about animation */
-
-const about=document.querySelectorAll(".about-content p");
-
-const aboutObserver=new IntersectionObserver(entries=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.classList.add("show");
-
-}
-
-});
-
-});
-
-about.forEach(p=>aboutObserver.observe(p));
-
-
-/* back to top */
-
+/* Back to Top Button */
 const topBtn=document.getElementById("topBtn");
-
 window.addEventListener("scroll",()=>{
-
-if(window.scrollY>400){
-topBtn.style.display="block";
-}else{
-topBtn.style.display="none";
-}
-
+  if(window.scrollY>400) topBtn.style.display="block";
+  else topBtn.style.display="none";
 });
-
-topBtn.onclick=()=>{
-window.scrollTo({top:0,behavior:"smooth"});
-};
+topBtn.onclick=()=>{window.scrollTo({top:0,behavior:"smooth"});}
