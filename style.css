@@ -71,8 +71,8 @@ nav a{
 }
 
 .profile{
-  width:220px;
-  height:220px;
+  width:300px;
+  height:300px;
   border-radius:50%;
   border:5px solid white;
   box-shadow:0 15px 40px rgba(0,0,0,0.35);
@@ -294,3 +294,4 @@ nav a{
   .profile{width:180px;height:180px;}
   nav a{margin-left:10px;}
 }
+
