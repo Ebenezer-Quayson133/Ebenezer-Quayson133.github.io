@@ -2,14 +2,11 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Ebenezer Quayson | Petroleum Engineer</title>
 
 <link rel="stylesheet" href="style.css">
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 </head>
@@ -17,270 +14,181 @@
 <body>
 
 <header>
-
-<h2 class="logo">EQ</h2>
-
-<nav>
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#achievements">Achievements</a>
-<a href="#experience">Experience</a>
-<a href="#contact">Contact</a>
-</nav>
-
-<button id="darkToggle">🌙</button>
-
+  <h2 class="logo">EQ</h2>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#experience">Experience</a>
+    <a href="#activities">Activities</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button id="darkToggle">🌙</button>
 </header>
 
-
-
+<!-- Hero Section -->
 <section id="home" class="hero">
-
-<img src="images/profile.jpeg" class="profile">
-
-<h1>Ebenezer Quayson</h1>
-
-<h3 class="typing"></h3>
-
-<div class="hero-buttons">
-
-<a href="#projects" class="btn">View Projects</a>
-
-  
-<a href="Ebenezer_Quayson_CV.pdf" class="btn-outline">Download CV</a>
-
-</div>
-
+  <img src="images/profile.jpeg" class="profile">
+  <h1>Ebenezer Quayson</h1>
+  <h3 class="typing"></h3>
+  <div class="hero-buttons">
+    <a href="#projects" class="btn">View Projects</a>
+    <a href="Ebenezer_Quayson_CV.pdf" class="btn-outline">Download CV</a>
+  </div>
 </section>
-
-
 
 <!-- About Section -->
 <section id="about" class="about-section">
   <div class="about-content">
-    <p> I’m an ambitious undergraduate student pursuing a Bachelor’s degree in Petroleum Engineering at the University of Mines and Technology (UMaT), Tarkwa, Ghana. </p>
-
-    <p> As a petroleum engineering student, I’m developing strong technical skills in drilling engineering, reservoir engineering and modelling, and production systems. I’m especially interested in how these skills can be applied to support cleaner and more efficient oil and gas operations as part of the global energy transition. </p>
-
-    <p> In addition to my engineering background, I’m also building solid skills in Python programming, which I apply in data analysis, machine learning, and problem solving related to petroleum engineering challenges. I believe combining programming with engineering knowledge is essential for innovation in today’s data driven energy landscape. </p>
-
-    <p> I’m naturally reflective and observant, which helps me stay focused and detail oriented in my work. Though I may come across as quiet or reserved at first, I’m fully engaged and committed behind the scenes. I believe in thinking before speaking and acting with intention, which allows me to contribute meaningfully in team environments. </p>
-
-    <p> I’m eager to apply my knowledge and skills to help meet the world’s energy demands while driving progress and innovation in the oil and gas industry. Through dedication, hard work, and teamwork, I aim to make a meaningful impact in the field and support the sustainable development of energy resources. </p>
+    <p>I’m an ambitious undergraduate student pursuing a Bachelor’s degree in Petroleum Engineering at the University of Mines and Technology (UMaT), Tarkwa, Ghana.</p>
+    <p>As a petroleum engineering student, I’m developing strong technical skills in drilling engineering, reservoir engineering and modelling, and production systems. I’m especially interested in how these skills can be applied to support cleaner and more efficient oil and gas operations as part of the global energy transition.</p>
+    <p>In addition to my engineering background, I’m also building solid skills in Python programming, which I apply in data analysis, machine learning, and problem solving related to petroleum engineering challenges. I believe combining programming with engineering knowledge is essential for innovation in today’s data driven energy landscape.</p>
+    <p>I’m naturally reflective and observant, which helps me stay focused and detail oriented in my work. Though I may come across as quiet or reserved at first, I’m fully engaged and committed behind the scenes. I believe in thinking before speaking and acting with intention, which allows me to contribute meaningfully in team environments.</p>
+    <p>I’m eager to apply my knowledge and skills to help meet the world’s energy demands while driving progress and innovation in the oil and gas industry. Through dedication, hard work, and teamwork, I aim to make a meaningful impact in the field and support the sustainable development of energy resources.</p>
 
     <h3 class="connect"><a href="https://www.linkedin.com/in/your-linkedin" target="_blank">Let's Connect</a></h3>
-
-    <p> Please feel free to reach out if you would like to discuss opportunities, collaborations, or conversations about emerging trends and advancements in petroleum engineering and the evolving energy sector. </p>
+    <p>Please feel free to reach out if you would like to discuss opportunities, collaborations, or conversations about emerging trends and advancements in petroleum engineering and the evolving energy sector.</p>
   </div>
 </section>
 
-<style>
-  .about-section {
-    text-align: center;
-    padding: 50px 20px;
-    max-width: 900px;
-    margin: auto;
-    font-family: Arial, sans-serif;
-  }
-
-  .about-content p,
-  .about-content h3 {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* longer fade */
-  }
-
-  /* Hover effect for Let's Connect link */
-  .connect a {
-    text-decoration: none;
-    color: #0A66C2;
-    font-weight: bold;
-    transition: color 0.3s, transform 0.3s, background-color 0.3s;
-    display: inline-block;
-    padding: 5px 10px;
-    border-radius: 5px;
-  }
-
-  .connect a:hover {
-    color: #004182;
-    transform: scale(1.1);
-    background-color: rgba(10,102,194,0.1);
-  }
-
-  /* Animated when in view */
-  .about-content.animate p,
-  .about-content.animate h3 {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Stagger delays using nth-child */
-  .about-content.animate p:nth-of-type(1) { transition-delay: 0.5s; }
-  .about-content.animate p:nth-of-type(2) { transition-delay: 1.0s; }
-  .about-content.animate p:nth-of-type(3) { transition-delay: 1.5s; }
-  .about-content.animate p:nth-of-type(4) { transition-delay: 2.0s; }
-  .about-content.animate p:nth-of-type(5) { transition-delay: 2.5s; }
-  .about-content.animate h3 { transition-delay: 3.0s; }
-  .about-content.animate p:last-of-type { transition-delay: 3.3s; }
-</style>
-
-<script>
-  // Intersection Observer for scroll-triggered animation
-  const aboutContent = document.querySelector('.about-content');
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) {
-        aboutContent.classList.add('animate');
-        observer.unobserve(entry.target); // animate only once
-      }
-    });
-  }, { threshold: 0.2 });
-
-  observer.observe(aboutContent);
-</script>
-</section>
-
-
-
+<!-- Skills Section -->
 <section id="skills" class="reveal">
+  <h2>Technical Skills</h2>
 
-<h2>Technical Skills</h2>
+  <div class="skill">
+    <p>Python</p>
+    <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+  </div>
 
-<div class="skill">
-<p>Python</p>
-<div class="skill-bar">
-<div class="skill-fill" data-width="95"></div>
-</div>
-</div>
+  <div class="skill">
+    <p>Machine Learning</p>
+    <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+  </div>
 
-<div class="skill">
-<p>Machine Learning</p>
-<div class="skill-bar">
-<div class="skill-fill" data-width="90"></div>
-</div>
-</div>
+  <div class="skill">
+    <p>CMG Reservoir Simulation</p>
+    <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+  </div>
 
-<div class="skill">
-<p>CMG Reservoir Simulation</p>
-<div class="skill-bar">
-<div class="skill-fill" data-width="85"></div>
-</div>
-</div>
-
-<div class="skill">
-<p>Excel / Data Analysis</p>
-<div class="skill-bar">
-<div class="skill-fill" data-width="95"></div>
-</div>
-</div>
-
+  <div class="skill">
+    <p>Excel / Data Analysis</p>
+    <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+  </div>
 </section>
 
-
-
+<!-- Projects Section -->
 <section id="projects" class="reveal">
-
-<h2>Projects</h2>
-
-<div class="grid">
-
-<div class="card">
-<img src="project1.jpeg">
-<h3>Machine Learning Prediction and Optimisation of Drilling ROP</h3>
-<p>Machine learning model predicting drilling Rate of Penetration using operational parameters.</p>
-</div>
-
-<div class="card">
-<img src="images/project2.jpeg">
-<h3>Gas Pipeline Design Project</h3>
-<p>Research and technical presentation on gas pipeline construction and design.</p>
-</div>
-
-</div>
-
+  <h2>Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="project1.jpeg">
+      <h3>Machine Learning Prediction and Optimisation of Drilling ROP</h3>
+      <p>Machine learning model predicting drilling Rate of Penetration using operational parameters.</p>
+    </div>
+    <div class="card">
+      <img src="images/project2.jpeg">
+      <h3>Gas Pipeline Design Project</h3>
+      <p>Research and technical presentation on gas pipeline construction and design.</p>
+    </div>
+  </div>
 </section>
 
-
-
+<!-- Achievements Section -->
 <section id="achievements" class="reveal">
-
-<h2>Achievements</h2>
-
-<div class="grid">
-
-<div class="card">
-<img src="images/competition1.jpeg">
-<h3>Gas Challenge 1st Runner Up</h3>
-</div>
-
-<div class="card">
-<img src="images/competition2.jpeg">
-<h3>SPE Ghana Scholarship</h3>
-</div>
-
-</div>
-
+  <h2>Achievements</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="images/competition1.jpeg">
+      <h3>Gas Challenge 1st Runner Up</h3>
+    </div>
+    <div class="card">
+      <img src="images/competition2.jpeg">
+      <h3>SPE Ghana Scholarship</h3>
+    </div>
+  </div>
 </section>
 
-
-
+<!-- Experience Section -->
 <section id="experience" class="reveal">
+  <h2>Experience Timeline</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>GOIL PLC</h3>
+      <p><strong>Quality Assurance Intern | October 2025</strong></p>
+      <ul>
+        <li>Conducted quality control tests on Automotive Gas Oil (AGO) to ensure compliance with standards.</li>
+        <li>Assisted in bunkering operations at Sekondi Naval Base to transfer diesel to Naval vessels.</li>
+        <li>Observed and learned about refilling of helicopters with Aviation Turbine Kerosene (ATK).</li>
+        <li>Gained practical understanding of jet fuel storage, purification, and distribution systems.</li>
+      </ul>
+    </div>
 
-<h2>Experience Timeline</h2>
+    <div class="timeline-item">
+      <h3>PetroSkill Virtual Internship</h3>
+      <p><strong>Intern | September 2025</strong></p>
+      <ul>
+        <li>Obtained knowledge on fluid flow and well performance, bit selection, and drilling fluid design.</li>
+        <li>Learned about reservoir drive mechanisms, material balance, and general oil rig operations.</li>
+      </ul>
+    </div>
 
-<div class="timeline">
-
-<div class="timeline-item">
-<h3>GOIL PLC</h3>
-<p>Quality Assurance Intern</p>
-</div>
-
-<div class="timeline-item">
-<h3>PetroSkill Training</h3>
-<p>Drilling & Reservoir Training</p>
-</div>
-
-<div class="timeline-item">
-<h3>Ghana National Gas Company</h3>
-<p>Researcher – Gas Challenge</p>
-</div>
-
-</div>
-
+    <div class="timeline-item">
+      <h3>Ghana National Gas Company</h3>
+      <p><strong>Student Researcher | September 2024 – November 2024</strong></p>
+      <ul>
+        <li>Researched the flaring of Isopentane at the Atuabo Gas Processing Plant.</li>
+        <li>Proposed a commercially viable strategy for its capture and utilization as part of the 2024 Gas Challenge.</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
+<!-- Voluntary / Extra-Curricular Section -->
+<section id="activities" class="reveal">
+  <h2>Voluntary / Extra-Curricular Activity</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>Academic Excellence Study Circle</h3>
+      <p><strong>2022 – 2026</strong></p>
+      <ul>
+        <li>Organised academic study sessions supporting over 25 petroleum engineering students, improving collaborative learning and exam performance through tutoring and discussions.</li>
+      </ul>
+    </div>
 
+    <div class="timeline-item">
+      <h3>SPE Energy4Me Ambassador</h3>
+      <p><strong>2025</strong></p>
+      <ul>
+        <li>Volunteered at the SPE UMaT Chapter to campaign and inspire over 100 Basic School students at Tarkwa to pursue careers in the energy industry.</li>
+        <li>Enlightened students on basic operations in the Oil and Gas industry.</li>
+      </ul>
+    </div>
 
+    <div class="timeline-item">
+      <h3>The Gas Challenge</h3>
+      <p><strong>2024</strong></p>
+      <ul>
+        <li>Competed against 36 top students from 12 universities and finished 1st Runner-Up in The Gas Challenge 2024.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
 <section id="contact" class="reveal">
-
-<h2>Contact</h2>
-
-<p>Tarkwa, Ghana</p>
-
-<p>Email: quaysonebenezer45@gmail.com</p>
-
-<p>Phone: +233 544 520829</p>
-
-  
-<a href="https://www.linkedin.com/in/ebenezerquayson131213" class="btn" target="_blank">
-LinkedIn
-</a>
-
+  <h2>Contact</h2>
+  <p>Tarkwa, Ghana</p>
+  <p>Email: quaysonebenezer45@gmail.com</p>
+  <p>Phone: +233 544 520829</p>
+  <a href="https://www.linkedin.com/in/ebenezerquayson131213" class="btn" target="_blank">LinkedIn</a>
 </section>
-
-
 
 <footer>
-
-<p>© 2026 Ebenezer Quayson</p>
-
+  <p>© 2026 Ebenezer Quayson</p>
 </footer>
 
 <script src="script.js"></script>
-
 </body>
-
 </html>
