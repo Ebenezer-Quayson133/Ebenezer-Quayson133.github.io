@@ -57,36 +57,68 @@
 
 
 
-<section id="about" class="reveal">
+<!-- About Section -->
+<section id="about" class="about-section">
+  <div class="about-content">
+    <p>
+      I’m an ambitious undergraduate student pursuing a Bachelor’s degree in Petroleum Engineering at the University of Mines and Technology (UMaT), Tarkwa, Ghana.
+    </p>
 
-<h2>About Me</h2>
+    <p>
+      As a petroleum engineering student, I’m developing strong technical skills in drilling engineering, reservoir engineering and modelling, and production systems. I’m especially interested in how these skills can be applied to support cleaner and more efficient oil and gas operations as part of the global energy transition.
+    </p>
 
-<p>
-I’m an ambitious undergraduate student pursuing a Bachelor’s degree in Petroleum Engineering at the University of Mines and Technology (UMaT), Tarkwa, Ghana.
-</p>
+    <p>
+      In addition to my engineering background, I’m also building solid skills in Python programming, which I apply in data analysis, machine learning, and problem solving related to petroleum engineering challenges. I believe combining programming with engineering knowledge is essential for innovation in today’s data driven energy landscape.
+    </p>
 
-<p>
-As a petroleum engineering student, I’m developing strong technical skills in drilling engineering, reservoir engineering and modelling, and production systems. I’m especially interested in how these skills can be applied to support cleaner and more efficient oil and gas operations as part of the global energy transition.
-</p>
+    <p>
+      I’m naturally reflective and observant, which helps me stay focused and detail oriented in my work. Though I may come across as quiet or reserved at first, I’m fully engaged and committed behind the scenes. I believe in thinking before speaking and acting with intention, which allows me to contribute meaningfully in team environments.
+    </p>
 
-<p>
-In addition to my engineering background, I’m also building solid skills in Python programming, which I apply in data analysis, machine learning, and problem solving related to petroleum engineering challenges. I believe combining programming with engineering knowledge is essential for innovation in today’s data driven energy landscape.
-</p>
+    <p>
+      I’m eager to apply my knowledge and skills to help meet the world’s energy demands while driving progress and innovation in the oil and gas industry. Through dedication, hard work, and teamwork, I aim to make a meaningful impact in the field and support the sustainable development of energy resources.
+    </p>
 
-<p>
-I’m naturally reflective and observant, which helps me stay focused and detail oriented in my work. Though I may come across as quiet or reserved at first, I’m fully engaged and committed behind the scenes. I believe in thinking before speaking and acting with intention, which allows me to contribute meaningfully in team environments.
-</p>
+    <h3>Let's Connect</h3>
 
-<p>
-I’m eager to apply my knowledge and skills to help meet the world’s energy demands while driving progress and innovation in the oil and gas industry. Through dedication, hard work, and teamwork, I aim to make a meaningful impact in the field and support the sustainable development of energy resources.
-</p>
+    <p>
+      Please feel free to reach out if you would like to discuss opportunities, collaborations, or conversations about emerging trends and advancements in petroleum engineering and the evolving energy sector.
+    </p>
+  </div>
+</section>
 
-<h3>Let's Connect</h3>
+<!-- Add this CSS -->
+<style>
+  .about-section {
+    text-align: center;
+    padding: 50px 20px;
+    max-width: 900px;
+    margin: auto;
+  }
 
-<p>
-Please feel free to reach out if you would like to discuss opportunities, collaborations, or conversations about emerging trends and advancements in petroleum engineering and the evolving energy sector.
-</p>
+  .about-content p,
+  .about-content h3 {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+  }
 
+  .about-content p:nth-child(1) { animation-delay: 0.2s; }
+  .about-content p:nth-child(2) { animation-delay: 0.4s; }
+  .about-content p:nth-child(3) { animation-delay: 0.6s; }
+  .about-content p:nth-child(4) { animation-delay: 0.8s; }
+  .about-content p:nth-child(5) { animation-delay: 1s; }
+  .about-content h3 { animation-delay: 1.2s; }
+  .about-content p:last-child { animation-delay: 1.4s; }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
 </section>
 
 <div class="stats">
@@ -251,6 +283,7 @@ LinkedIn
 </body>
 
 </html>
+
 
 
 
