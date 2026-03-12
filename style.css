@@ -14,7 +14,7 @@ body{
   padding:0 20px;
 }
 
-/* Scroll progress bar */
+/* Scroll Progress Bar */
 .scroll-bar{
   position:fixed;
   top:0;
@@ -26,11 +26,12 @@ body{
 }
 
 /* Header */
-header{
+.dark-header{
   position:sticky;
   top:0;
-  background:white;
-  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+  background:#111;
+  color:white;
+  box-shadow:0 2px 10px rgba(0,0,0,0.3);
   z-index:1000;
 }
 
@@ -44,7 +45,7 @@ header{
 nav a{
   margin-left:20px;
   text-decoration:none;
-  color:#333;
+  color:white;
   font-weight:500;
 }
 
@@ -70,8 +71,8 @@ nav a{
 }
 
 .profile{
-  width:300px;
-  height:300px;
+  width:220px;
+  height:220px;
   border-radius:50%;
   border:5px solid white;
   box-shadow:0 15px 40px rgba(0,0,0,0.35);
@@ -168,7 +169,7 @@ nav a{
   margin-bottom:40px;
 }
 
-/* About Content Animations */
+/* About Content & Timeline Animations */
 .about-content{
   max-width:750px;
   margin:auto;
@@ -187,7 +188,7 @@ nav a{
   transform:translateY(0);
 }
 
-/* Let's Connect */
+/* Connect */
 .connect a{
   color:#0A66C2;
   text-decoration:none;
@@ -277,6 +278,15 @@ nav a{
   z-index:100;
 }
 
+/* Dark Footer */
+.dark-footer{
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:20px 0;
+  font-size:16px;
+}
+
 /* Responsive */
 @media(max-width:768px){
   .hero h1{font-size:36px;}
@@ -284,4 +294,3 @@ nav a{
   .profile{width:180px;height:180px;}
   nav a{margin-left:10px;}
 }
-
